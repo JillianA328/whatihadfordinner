@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech It Out</title>
+  <!--attach stylesheet-->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+      <header class="hero">
+          <div>
+            <!--navbar menu-->
+            <nav class"nav">
+                    <a class="link" href="/">Home</a>
+                    <a class="link" href="/dashboard">Dashboard</a>
+                    <!--only appear if logged in-->
+                    {{#if loggedIn}}
+                    <a class="link" href="/" id="logout">Logout</a>
+                    <!--appear if not logged in-->
+                    {{else}}
+                    <a class="link" href="/login">Login</a>
+                    {{/if}}
+                </nav>          
+          </div>
+
+          <h1 class="app-title"><i class="fab "></i>Tech It Out</h1>
+      </header>
+
+    <main>
+      {{{ body }}}
+    </main>
+  </div>
+    <!--if logged in, provide js file to log out-->
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>
