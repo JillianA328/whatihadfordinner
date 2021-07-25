@@ -22,13 +22,13 @@ Post.init(
         type: DataTypes.TEXT,
         allowNull: false
       },
-      recipe_link: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            isURL: true
-        }
-      },
+      // recipe_link: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false,
+      //   validate: {
+      //       isURL: true
+      //   }
+      // },
       user_id: {
         type: DataTypes.INTEGER,
         references: {
