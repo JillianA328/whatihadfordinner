@@ -2,6 +2,7 @@ async function newFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="post-title"]').value;
+    const link = document.querySelector('input[name="link"]').value;
     const content = document.querySelector('input[name="content"]').value;
     
   
@@ -9,6 +10,7 @@ async function newFormHandler(event) {
       method: 'POST',
       body: JSON.stringify({
         title,
+        link,
         content
       }),
       headers: {
@@ -17,7 +19,8 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      console.log(response);
+      document.location.replace('/dashboard/');
     } else {
       alert(response.statusText);
     }
