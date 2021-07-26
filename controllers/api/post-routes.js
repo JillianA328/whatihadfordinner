@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
             attributes: [
                 'id',
                 'title',
+                'link',
                 'content',
                 'created_at'
             ],
@@ -49,6 +50,7 @@ router.get('/:id', (req, res) => {
             attributes: [
                 'id',
                 'content',
+                'link',
                 'title',
                 'created_at'
             ],
@@ -68,7 +70,7 @@ router.get('/:id', (req, res) => {
             ]
         })
         .then(dbPostData => {
-            linkPreviewGenerator
+            previewData
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
