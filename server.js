@@ -11,6 +11,18 @@ const hbs = exphbs.create({ helpers });
 const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3001;
+//passport
+const bcrypt = require('bcrypt')
+const passport = require('passport')
+const flash = require('express-flash')
+const methodOverride = require('method-override')
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
+
+
 
 //set up sessions
 const SequelizeStore = require('connect-session-sequelize')(session.Store);

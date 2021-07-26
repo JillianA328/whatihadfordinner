@@ -1,26 +1,34 @@
-async function loginFormHandler(event) {
-    event.preventDefault();
+const initializePassport = require('./passport-config')
+  initializePassport(
+    passport,
+    email => users.find(user => user.email === email),
+    id => users.find(user => user.id === id)
+  )
   
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+  const users = []
   
-    if (username && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'post',
-        body: JSON.stringify({
-          username,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
+  app.set('view-engine', 'ejs')
+  app.use(express.urlencoded({ extended: false }))
+  app.use(flash())
+  app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+  }))
+  app.use(passport.initialize())
+  app.use(passport.session())
+  app.use(methodOverride('_method'))
   
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  }
+  app.get('/', checkAuthenticated, (req, res) => {
+    res.render('index.ejs', { name: req.user.name })
+  })
   
+  app.get('/login', checkNotAuthenticated, (req, res) => {
+    res.render('login.ejs')
+  })
   
-  document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+  app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+  }))
