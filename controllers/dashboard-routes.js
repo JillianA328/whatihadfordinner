@@ -3,7 +3,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-const linkPreviewGenerator = require("link-preview-generator");
+// const linkPreviewGenerator = require("link-preview-generator");
 
 //find all posts for user when logged in
 router.get('/', withAuth, (req, res) => {
@@ -74,7 +74,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             ]
         })
         .then(dbPostData => {
-             link = previewData
+            //  link = previewData
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
