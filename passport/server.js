@@ -1,6 +1,8 @@
 if (process.env.NODE_ENV !== 'production') {
 require('dotenv').config()
 }
+
+console.log('hi');
   
   const bcrypt = require('bcrypt')
   const passport = require('passport')
