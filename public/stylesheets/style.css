@@ -1,10 +1,12 @@
 :root {
-    --primary: #ccdad1;
     --secondary: #dce9d5;
     --tertiary: #788585;
     --light-dark: #a1a0a1;
-    --dark: #201110;
     --border-radius: .3rem;
+    --primary-color: rgb(251,240,207);
+    --secondary-color: rgb(33, 85, 33);
+    --tertiary-color: #fbff00;
+    --quaternary-color: rgb(155, 9, 9);
   }
   
   * {
@@ -12,11 +14,11 @@
   }
   
   body {
-    background-color: var(--primary);
+    background-color: var(--primary-color);
     margin: 0;
     padding: 0;
-    font-family: "IBM Plex Sans", sans-serif;
-    color: var(--dark);
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--quaternary-color);
     line-height: 1.5;
     font-size: 24px;
   }
@@ -28,7 +30,7 @@
   h6 {
     font-weight: 700;
     margin: 0;
-    color: var(--dark);
+    color: var(--quaternary-color);
     line-height: 1.25;
   }
   
@@ -71,10 +73,10 @@
   }
   
   .btn:hover {
-    color: var(--primary);
+    color: var(--primary-color);
     background-color: var(--tertiary);
     transform: translate(0, 0);
-    box-shadow: 2px 2px var(--dark);
+    box-shadow: 2px 2px var(--quaternary-color);
   }
   
   .btn-inline {
@@ -83,7 +85,7 @@
   
   .btn-back {
     border-radius: var(--border-radius);
-    color: var(--primary);
+    color: var(--primary-color);
     border: none;
     outline: none;
     background-color: var(--light-dark);
@@ -98,16 +100,17 @@
   }
   
   .btn-back:hover {
-    color: var(--primary);
+    color: var(--primary-color);
     background-color: var(--tertiary);
     transform: translate(0, 0);
-    box-shadow: 2px 2px var(--dark);
+    box-shadow: 2px 2px var(--quaternary-color);
   }
   
   .hero {
-    padding: 3% 4%;
-    background-color: var(--dark);
-    color: var(--primary);
+    padding: 1% 4%;
+    background-color: var(--quaternary-color);
+    background-image: linear-gradient(45deg, var(--quaternary-color) 0%, orange 52%, var(--quaternary-color) 90%);
+    color: var(--primary-color);
   }
   
   .hero p {
@@ -116,12 +119,11 @@
   
   .app-title {
     font-size: 3rem;
-    background-color: var(--primary);
-    color: var(--dark);
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
     padding: 0 10px;
     display: inline-block;
     border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--light-dark);
   }
   
   .list-group {
@@ -134,12 +136,12 @@
     padding: 1.5%;
     border-radius: var(--border-radius);
     background-color: var(--light-dark);
-    color: var(--primary);
+    color: var(--primary-color);
     text-decoration: none;
   }
   
   .list-item:hover {
-    background-color: var(--dark);
+    background-color: var(--quaternary-color);
   }
   
   .status-icon {
@@ -160,13 +162,13 @@
   
   .card {
     margin: 0 0 20px 0;
-    border: 2px solid var(--dark);
+    border: 2px solid var(--quaternary-color);
     border-radius: var(--border-radius);
   }
   
   .card-header {
-    color: var(--primary);
-    background-color: var(--dark);
+    color: var(--primary-color);
+    background-color: var(--quaternary-color);
     padding: 1%;
     border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
@@ -187,14 +189,14 @@
   }
   
   .login-link {
-    color: var(--dark);
+    color: var(--quaternary-color);
   }
   
-  .nav {
+  /* .nav {
     padding: 10px;
     line-height: 1.25;
     float: top;
-  }
+  } */
   
   footer {
     border-top: 1px solid #ccc;
