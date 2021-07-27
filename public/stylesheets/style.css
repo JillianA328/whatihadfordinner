@@ -110,7 +110,6 @@
     padding: 1% 4%;
     background-color: var(--quaternary-color);
     background-image: linear-gradient(45deg, var(--quaternary-color) 0%, orange 52%, var(--quaternary-color) 90%);
-    color: var(--primary-color);
   }
   
   .hero p {
@@ -124,6 +123,9 @@
     padding: 0 10px;
     display: inline-block;
     border-radius: var(--border-radius);
+    text-shadow: 1px 1px orange, 
+    2px 2px orange, 
+    3px 3px orange;
   }
   
   .list-group {
@@ -185,18 +187,31 @@
   }
   
   .link {
-    color: var(--light-dark);
+    color: var(--primary-color);
+    text-decoration: none;
+    background-image: linear-gradient(45deg, var(--quaternary-color) 0%, orange 52%, yellow 90%);
+    transition: all .5s ease-out;
+  }
+
+  .link:hover {
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    border-radius: 10px;
+    border: none;
+    background-position: 1px -50px;
   }
   
   .login-link {
     color: var(--quaternary-color);
   }
   
-  /* .nav {
-    padding: 10px;
-    line-height: 1.25;
-    float: top;
-  } */
+  nav {
+    float: right;
+  }
+
+  nav a.link {
+    padding: 2%;
+  }
   
   footer {
     border-top: 1px solid #ccc;
