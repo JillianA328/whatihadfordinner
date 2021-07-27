@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
+const linkPreviewGenerator = require("link-preview-generator");
 
 //get all posts
 router.get('/', (req, res) => {
@@ -69,7 +70,11 @@ router.get('/:id', (req, res) => {
             ]
         })
         .then(dbPostData => {
-            // previewData
+            const previewLink = dbPostData.link
+              const previewData = linkPreviewGenerator(
+                previewLink
+            );
+            console.log(previewData);
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
@@ -90,7 +95,11 @@ router.post('/', withAuth, (req, res) => {
             content: req.body.content,
             user_id: req.session.user_id
         })
-        .then(dbPostData => res.json(dbPostData))
+        .then(dbPostData => {
+        res.json(dbPostData)
+        })
+        //  res.render('dashboard')})
+        // res.render('dashboard')
         .catch(err => {
             console.log(err);
             res.status(500).json(err);

@@ -62,6 +62,7 @@ router.get('/post/:id', (req, res) => {
     attributes: [
       'id',
       'content',
+      'link',
       'title',
       'created_at'
     ],
