@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
+const linkPreviewGenerator = require("link-preview-generator");
 
 //get all posts
 router.get('/', (req, res) => {
@@ -10,6 +11,7 @@ router.get('/', (req, res) => {
             attributes: [
                 'id',
                 'title',
+                'link',
                 'content',
                 'created_at'
             ],
@@ -48,6 +50,7 @@ router.get('/:id', (req, res) => {
             attributes: [
                 'id',
                 'content',
+                'link',
                 'title',
                 'created_at'
             ],
@@ -67,6 +70,11 @@ router.get('/:id', (req, res) => {
             ]
         })
         .then(dbPostData => {
+            const previewLink = dbPostData.link
+              const previewData = linkPreviewGenerator(
+                previewLink
+            );
+            console.log(previewData);
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
@@ -83,10 +91,15 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Post.create({
             title: req.body.title,
+            link: req.body.link,
             content: req.body.content,
             user_id: req.session.user_id
         })
-        .then(dbPostData => res.json(dbPostData))
+        .then(dbPostData => {
+        res.json(dbPostData)
+        })
+        //  res.render('dashboard')})
+        // res.render('dashboard')
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -98,6 +111,7 @@ router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
             title: req.body.title,
+            link: req.body.link,
             content: req.body.content
         }, 
         {
@@ -134,5 +148,6 @@ router.delete('/:id', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
+
 
 module.exports = router;

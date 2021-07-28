@@ -2,6 +2,7 @@ async function editFormHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value.trim();
+    const link = document.querySelector('input[name="link"]').value.trim();
     const content = document.querySelector('input[name="content"]').value.trim();
 
     //console.log(title);
@@ -16,6 +17,7 @@ async function editFormHandler(event) {
         body: JSON.stringify({
           post_id: id,
           title,
+          link,
           content
         }),
         headers: {
@@ -24,7 +26,7 @@ async function editFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
