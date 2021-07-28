@@ -4,8 +4,8 @@
     --light-dark: #a1a0a1;
     --border-radius: .3rem;
     --primary-color: rgb(251,240,207);
-    --secondary-color: rgb(33, 85, 33);
-    --tertiary-color: #fbff00;
+    --secondary-color:white;
+    --tertiary-color: #ffa10063;
     --quaternary-color: rgb(155, 9, 9);
   }
   
@@ -55,7 +55,9 @@
   
   p {
     font-size: 1.2rem;
-    color: var(--primary-color);
+    color: rgb(165, 63, 26);
+    font-weight: bolder;
+    background-color: var(--secondary-color);
   }
   
   .btn {
@@ -66,7 +68,7 @@
     display: block;
     margin: 5px 0;
     border-radius: var(--border-radius);
-    color: white;
+    color: var(--secondary-color);
     border: none;
     outline: none;
     background-color: var(--light-dark);
@@ -167,6 +169,7 @@
     margin: 0 0 20px 0;
     border: 2px solid var(--quaternary-color);
     border-radius: var(--border-radius);
+    background-color: var(--tertiary-color);
   }
   
   .card-header {
@@ -184,6 +187,7 @@
     font-weight: 700;
     margin: 0;
     line-height: 1.25;
+    background-color: var(--secondary-color);
   }
   
   a.link {
@@ -191,7 +195,7 @@
   }
 
   .link {
-    color: var(--primary-color);
+    color: orange;
     text-decoration: none;
     transition: all .5s ease-out;
   }
