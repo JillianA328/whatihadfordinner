@@ -33,6 +33,10 @@
     color: var(--quaternary-color);
     line-height: 1.25;
   }
+
+  h3 {
+    color: orange;
+  }
   
   .link-color {
     color: var(--tertiary);
@@ -55,9 +59,11 @@
   
   p {
     font-size: 1.2rem;
-    color: rgb(165, 63, 26);
+    color: var(--quaternary-color);
     font-weight: bolder;
     background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 5px;
   }
   
   .btn {
@@ -188,6 +194,8 @@
     margin: 0;
     line-height: 1.25;
     background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
   }
   
   a.link {
