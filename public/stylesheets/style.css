@@ -55,6 +55,7 @@
   
   p {
     font-size: 1.2rem;
+    color: var(--primary-color);
   }
   
   .btn {
@@ -169,27 +170,29 @@
   }
   
   .card-header {
-    color: var(--primary-color);
+    background-image: url(images/post_image.jpg);
     background-color: var(--quaternary-color);
     padding: 1%;
-    border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
   }
   
   .card-body {
     padding: 1%;
+    color: var(--quaternary-color);
   }
   
   h4 {
     font-weight: 700;
     margin: 0;
-    color: var(--light-dark);
     line-height: 1.25;
   }
   
+  a.link {
+    padding: 0.5%;
+  }
+
   .link {
     color: var(--primary-color);
     text-decoration: none;
-    background-image: linear-gradient(45deg, var(--quaternary-color) 0%, orange 52%, yellow 90%);
     transition: all .5s ease-out;
   }
 
@@ -198,7 +201,7 @@
     color: var(--quaternary-color);
     border-radius: 10px;
     border: none;
-    background-position: 1px -50px;
+    background-image: linear-gradient(45deg, orange 52%, yellow 90%);
   }
   
   .login-link {
