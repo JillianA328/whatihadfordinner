@@ -100,11 +100,35 @@ router.get('/:id', (req, res) => {
 // }))
 
 // traditional route handler, passed req/res
-router.post("/login", function(req, res, next) {
+// router.post("/login", function(req, res, next) {
+//     // generate the authenticate method and pass the req/res
+//     //console.log('login route');
+//     passport.authenticate('local', function(err, user, info) {
+//       if (err) { return res.status(500).json(err); }
+//       console.log(user);
+//       if (!user) { console.log('========= USER NOT FOUND ============='); return res.redirect('/'); }
+//       // req / res held in closure
+//     //   req.logIn(user, function(err) {
+//     //     if (err) { return next(err); }
+//     //     return res.send(user);
+//     //   });
+//     // if the user authenticateion is succsful
+//     req.session.save(() => {
+
+//         req.session.user_id = dbUserData.id;
+//         req.session.username = dbUserData.username;
+//         req.session.loggedIn = true;
+  
+//         res.json({ user: dbUserData, message: 'You are now logged in!' });
+//       });
+//     })(req, res, next);
+//   });
+
+router.post("/login", passport.authenticate('local'),  function(req, res) {
     // generate the authenticate method and pass the req/res
-    passport.authenticate('local', function(err, user, info) {
-      if (err) { returnres.status(500).json(err); }
-      if (!user) { return res.redirect('/'); }
+    console.log('login route');
+    console.log(res.user);
+      
       // req / res held in closure
     //   req.logIn(user, function(err) {
     //     if (err) { return next(err); }
@@ -119,8 +143,9 @@ router.post("/login", function(req, res, next) {
   
         res.json({ user: dbUserData, message: 'You are now logged in!' });
       });
-    })(req, res, next);
-  });
+    });
+
+
 
 //sign up
 // router.get('/signup', withAuth, (req, res) => {

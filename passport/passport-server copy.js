@@ -11,7 +11,7 @@ const methodOverride = require('method-override')
 const initializePassport = require('.passport-config')
 initializePassport(
   passport,
-  email => users.find(user => user.email === email),
+  name => users.find(user => user.name === name),
   id => users.find(user => user.id === id)
 )
 
@@ -55,7 +55,7 @@ app.post('/signup', checkNotAuthenticated, async (req, res) => {
     users.push({
       id: Date.now().toString(),
       name: req.body.name,
-      email: req.body.email,
+      //email: req.body.email,
       password: hashedPassword
     })
     res.redirect('/login')
