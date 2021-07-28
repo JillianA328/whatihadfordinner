@@ -4,11 +4,6 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 //establish relative path to other directories
 const path = require('path');
-// passport
-const passport = require('passport')
-const flash = require('express-flash')
-const methodOverride = require('method-override')
-
 //assign templating engine
 const helpers = require('./utils/helpers')
 const exphbs = require('express-handlebars');
@@ -30,12 +25,7 @@ const sess = {
   })
 };
 
-app.use(flash())
 app.use(session(sess));
-app.use(passport.initialize())
-app.use(passport.session())
-app.use(methodOverride('_method'))
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -46,6 +36,6 @@ app.use(routes);
 
 //turn on connection to db and server
 //sync takes models and connects them to associated database tables
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'))
 });
