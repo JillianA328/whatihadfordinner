@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
-const linkPreviewGenerator = require("link-preview-generator");
+//const linkPreviewGenerator = require("link-preview-generator");
 
 //get all posts
 router.get('/', (req, res) => {
