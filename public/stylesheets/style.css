@@ -79,6 +79,8 @@ p {
   outline: none;
   background-color: var(--light-dark);
   transform: translate(-1px, -1px);
+  animation: fadeIn;
+  animation-duration: 1s;
 }
 
 .btn:hover {
@@ -240,6 +242,8 @@ footer {
 .form-input,
 .form-textarea {
   display: block;
+  animation: fadeIn;
+  animation-duration: 3s;
 }
 
 .form-label {
@@ -313,4 +317,19 @@ footer {
 
 .col-auto {
   flex-grow: 1;
+}
+
+#card-fly{
+  animation: backInUp;
+  animation-duration: 1s;
+}
+#input-card{
+  animation: fadeIn;
+  animation-duration: 1s;
+}
+
+#card-header{
+  animation: flash;
+  animation-delay: 1s;
+  animation-duration: 1s;
 }
