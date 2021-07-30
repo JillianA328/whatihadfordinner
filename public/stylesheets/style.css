@@ -328,7 +328,7 @@ footer {
   animation-duration: 1s;
 }
 
-#card-header{
+#card-title{
   animation: flash;
   animation-delay: 1s;
   animation-duration: 1s;
