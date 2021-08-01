@@ -1,42 +1,47 @@
-# What I Had for Dinner
-  
-  ![License badge](https://img.shields.io/badge/Made%20with-Open-blueviolet.svg)
-    
+# Project 2 - What I Had for Dinner    
 
   ## Table of Contents
   * [Description](#challenge-description)
   * [Built With](#built-with)
+  * [Team Members](#team-members)
   * [Installation](#installation)
   * [Usage](#usage)
   * [Screenshot](#screenshot)
   * [License](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
-  * [About Me](#about-me)
   * [Links](#links)
 
   ## Challenge Description
-  This challenge, assigned by Rutgers Coding Bootcamp, required the creation of a back end for an Internet Retail e-commerce site.
+  This project, assigned by Rutgers Coding Bootcamp, required the creation of an online application utilizing all of the skills acquired from class thus far concerning the frontend and backend. Our project concept was to provide a platform in which users can share their home recipes or any recipes they've enjoyed with the What I Had For Dinner community online. The goal of this application was to create a user interface that would allow a user to post about the fantastic recipes they've tried and be able to communicate with fellow home chefs via commenting functionality on posts.
 
   ## Built With
   * JavaScript
-  * Node.js
-  * Express.js
+  * Node
+  * Express
+  * Handlebars
   * MySQL2
   * Sequelize
+  * Animate
+
+  ## Team Members
+  * Jillian Amelung
+  * Marykate Smith
+  * Greg D'Amato
+  * Leslie ChinQuee
 
   ## Installation
-  In order to view the database the user must install Node.js on their PC, initialize Node in the command line, and install the files from package.json.
-  Install Insomnia Core in order to interact with the app.
+  In order to view the What I Had For Dinner webpage, the user can either install Node.js on their PC initialize Node in the command line, and install the files from package.json or access the webpage via the Heroku link provided below.
+
 
   ## Usage
-  The user can access the database files via Insomnia Core. Here they can see all Products, Categories and Tags saved or can select individual ids to view. They can also update and delete these items in the database, as well as add new items (see project video for details).
+  The user can access the website via Heroku. Here they can signup to create an account, write posts which include links to recipes, view all posts and comment on other users' posts.They can also edit and delete posts saved on their dashboard.
 
   ## Screenshot
-  ![Screenshot of All Products in the Database](https://user-images.githubusercontent.com/81491306/126094933-b72ae8ca-4f44-4b64-9b6a-bfc575de449a.png)
+  ![Screenshot of All Products in the Database]()
 
   ## License
-  This project is covered under the Open license.
+  N/A
     
   ## Contributing
   N/A
@@ -44,18 +49,12 @@
   ## Tests
   N/A
 
-  # About Me
-  I am a Systems Engineer working at a medical device company. Currently, working on device design and development, actively learning about the software side of the process.
-
   # Links
-  Want to see more of my work? Check out my GitHub page:
-  [lchinquee](https://github.com/lchinquee) 
-
-  ## Video Link
-  [Link to Video](https://drive.google.com/file/d/1JJ_WOVWwiJqKcXX5sffJrSa5l9f-gz0S/view)
-
   ## GitHub Repo
-  [Link to GitHub Repo](https://github.com/lchinquee/respera)
+  [Link to GitHub Repo](https://github.com/JillianA328/whatihadfordinner)
+
+  ## Heroku 
+  [Link to Deployed Website via Heroku](https://whatihadfordinner.herokuapp.com/)
 
   # References
-  Rutgers Coding Bootcamp class materials and TA resources.
+  Rutgers Coding Bootcamp class materials, online documentation and TA resources.
