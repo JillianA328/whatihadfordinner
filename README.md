@@ -38,7 +38,17 @@
   The user can access the website via Heroku. Here they can signup to create an account, write posts which include links to recipes, view all posts and comment on other users' posts.They can also edit and delete posts saved on their dashboard.
 
   ## Screenshot
-  ![Screenshot of All Products in the Database]()
+  ### Home Page
+  ![Home Screen](https://user-images.githubusercontent.com/81491306/127758190-f4024664-0ff4-46aa-b04d-aed5e5fe755d.JPG)
+
+  ### Login
+  ![User Login or Signup](https://user-images.githubusercontent.com/81491306/127758198-04c2c2a5-3344-4326-a3a3-8b2b70451cdf.JPG)
+
+  ### Post Creation
+  ![Create a New Post](https://user-images.githubusercontent.com/81491306/127758186-c07d86f0-9cff-457c-a83d-2cb8e7e57a88.JPG)
+
+  ### Comment on Posts
+  ![Add Comments to Posts](https://user-images.githubusercontent.com/81491306/127758178-c3fa4f3d-969c-4b8a-bf79-04a7003bb2f0.JPG)
 
   ## License
   N/A
